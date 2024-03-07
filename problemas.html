@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Definição Problemas TechBot Creations</title>
+    <link rel="stylesheet" href="Css/main.css">
+    <link rel="icon" href="./Images-Video/Logo/slogo.png">
+    <script src="https://kit.fontawesome.com/849bc237cd.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body class="body"> 
+    <nav>
+        <div class="logo"><b>TechBot Creations</b></div>
+        <div class="search-box">
+            <input type="text" id="search-input" class="search-txt" placeholder="Search">
+            <button type="submit"></button>
+            <a href="#" class="search-btn" id="search-btn">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <nav class="sidebar">
+        <div class="sidebar header"></div>
+            
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home">&nbsp Home</i></a></li>
+                <li><a href="#" class="top-btn"><i class="fas fa-stream"> &nbspTopics</i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="top-show">
+                    <li><a href="Download.html"><i class="fas fa-folder"> &nbspDownload Files</i></a></li>
+                    <li><a href="BB-8.html"><i class="fas fa-robot"> &nbspBB-8</i></a></li>
+                    <li><a href="metodologia.html"><i class="far fa-clipboard">&nbspMetodologia</i></a></li>
+                    <li><a href="tecnologias.html"><i class="	fas fa-microchip">&nbspTecnologias Usadas</i></a></li>
+                    <li><a href="casos.html"><i class="	fas fa-project-diagram">&nbspCasos de Uso</i></a></li>
+                </ul>
+                <li><a href="curso.html"><i class="fas fa-graduation-cap">&nbsp Curso</i></a></li>
+                <li><a href="#" class="fct-btn"><i class="fas fa-address-card">&nbsp FCT</i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="fct-show">
+                    <li><a href="ttrw.html"><i class="fas fa-building">&nbsp TTRW</i></a></li>
+                    <li><a href="sourcing.html"><i class="fas fa-building">&nbsp Sourcing Trust</i></a></li>
+                </ul>
+                <li><a href="#" class="soc-btn"><i class="fas fa-at">&nbsp Social Media </i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="soc-show"> 
+                    <li><a href="https://www.instagram.com/techbot._.creations/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/people/TechBot-Creations/61551598060661/"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/techbot-creations-7a787b293/"><i class="fab fa-linkedin"></i></a></li>
+                </ul> 
+                <li><a href="contact.html"><i class="fas fa-envelope">&nbspContact</i></a></li> 
+                <li><a href="about.html"><i class="fas fa-info-circle">&nbsp About Us</i></a></li>
+            </ul>
+        </nav>
+    </nav>
+    <script>
+        $('.top-btn').click(function(){
+            $('nav ul .top-show').toggleClass("show");
+        });
+
+        $('.soc-btn').click(function(){
+            $('nav ul .soc-show').toggleClass("show1");
+        });
+        $('.fct-btn').click(function(){
+            $('nav ul .fct-show').toggleClass("show2");
+        });
+
+        document.getElementById('search-input').addEventListener('keydown', function (e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                realizarPesquisa();
+            }
+        });
+
+        document.getElementById('search-btn').addEventListener('click', function () {
+            realizarPesquisa();
+        });
+
+        function realizarPesquisa() {
+    var searchTerm = document.getElementById('search-input').value;
+    var encodedSearchTerm = encodeURIComponent(searchTerm);
+    var urlMapping = {
+        'Contact' : 'Contact.html',
+        'contact' : 'Contact.html',
+        'about us' : 'about.html',
+        'About Us' : 'about.html',
+        'BB-8' : 'BB-8.html',
+        'bb-8' : 'BB-8.html',
+        'Curso' : 'curso.html',
+        'curso' : 'curso.html',
+        'ttrw' : 'ttrw.html',
+        'TTRW' : 'ttrw.html',
+        'Download' : 'download.html',
+        'Download Files' : 'download.html',
+        'Files' : 'download.html',
+        'files' : 'download.html',
+        'download' : 'download.html',
+        'Home' : 'index.html',
+        'home' : 'index.html',
+        'Metodologia' : 'metodologia.html',
+                'metodologia' : 'metodologia.html',
+                'tecnologias usadas' : 'tecnologias.html',
+        'Tecnologias Usadas' : 'tecnologias.html',
+        'tecnologias' : 'tecnologias.html',
+        'Tecnologias' : 'tecnologias.html',
+        'Casos de Uso' : 'casos.html',
+        'casos de uso' : 'casos.html',
+        'Casos' : 'casos.html',
+        'casos' : 'casos.html',
+        'Sourcing Trust' : 'sourcing.html',
+        'sourcing trust' : 'sourcing.html',
+        'Sourcing' : 'sourcing.html',
+        'sourcing' : 'sourcing.html',
+        'Trust' : 'sourcing.html',
+        'trust' : 'sourcing.html',
+    };
+
+    if (searchTerm in urlMapping) {
+        var urlDestino = urlMapping[searchTerm];
+        window.location.href = urlDestino + '?pesquisa=' + encodedSearchTerm;
+    } 
+    else {
+        window.location.href = '404.html?pesquisa=' + encodedSearchTerm;
+    }
+}
+    </script>
+    <br>
+    <div class="section">
+        <div class="section-title"><center>Definição de Problemas<hr width="85%" color = black size = 3 align="center"></center></div>
+        <br><div class="section-txt">
+            Embora a construção de um robô BB-8 de controle remoto seja um projeto emocionante e divertido, 
+            existem alguns problemas que os construtores podem enfrentar.
+            Nesta página poderão ver quais os problemas que vão aparecer ao longo do caminho.
+        </div>
+    </div>
+    <br>
+    <div class="section">
+        <div class="section-title"><center>Seleção de Componentes<hr width="85%" color = black size = 3 align="center"></center></div>
+        <br>
+        <div class="section-txt">
+            A seleção dos componentes certos é fundamental para garantir que o carro funcione corretamente. 
+            A escolha de componentes de baixa qualidade pode resultar em um robô que não funcione ou não responda corretamente.
+        </div>
+        <br><center><img src="./Images-Video/BB-8/hc-06-conection.jpg" alt="HC-06 conectado ao Motor-Shield" class="img"></center>
+    </div>
+    <br>
+    <div class="section">
+        <div class="section-title"><center>Soldagem<hr width="85%" color = black size = 3 align="center"></center></div>
+        <br>
+        <div class="section-txt">
+            A soldagem é um processo importante na construção do robô, e é essencial garantir que as conexões elétricas sejam seguras e confiáveis. 
+            A falta de habilidade na soldagem pode levar a conexões fracas, o que pode resultar em um mau funcionamento do robô.
+        </div>
+        <br><center><img src="./Images-Video/BB-8/motor-shield.jpg" alt="Motor-Shield" class="img"></center>
+    </div>
+    <br>
+    <div class="section">
+        <div class="section-title"><center>Configuração e Calibração<hr width="85%" color = black size = 3 align="center"></center></div>
+        <br>
+        <div class="section-txt">
+            Após a montagem do robô, é necessário configurá-lo e calibrá-lo adequadamente para garantir que ele funcione corretamente. 
+            Isso pode ser um desafio para aqueles que não têm experiência em trabalhar com componentes eletrônicos ou na programação de controladores.
+        </div>
+        <br><center><img src="./Images-Video/BB-8/motor-dc-conection.jpg" alt="Motores-DC Conection" class="img"></center>
+    </div>
+    <br>
+    <div class="section">
+        <div class="section-title"><center>Problemas Mecânicos<hr width="85%" color = black size = 3 align="center"></center></div>
+        <br>
+        <div class="section-txt">
+            Os robôs de controle remoto são suscetíveis a problemas mecânicos, como peças partidas ou desgastadas. 
+            É importante ter em mente que a manutenção do robô pode ser necessária para garantir seu bom funcionamento.
+        </div>
+        <br>
+        <br><center><img src="./Images-Video/BB-8/arduino-screw.jpg" alt="Arduino" class="img"></center>
+    </div>
+    <br>
+    <div class="section">
+        <div class="section-title"><center>Personalização<hr width="85%" color = black size = 3 align="center"></center></div>
+        <br>
+        <div class="section-txt">
+            Embora a personalização possa ser uma parte divertida e criativa do projeto, 
+            pode ser um desafio encontrar as peças certas para atender às suas necessidades.
+             A escolha de peças incompatíveis ou inadequadas pode resultar em um robô que não funcione corretamente.
+        </div>
+        <br><center><img src="./Images-Video/BB-8/personalização.jpg" alt="Personalização do robô" class="img"></center>
+    </div>
+    <nav>
+
+        <div class="end"><center>TechBot Creations in the path to innovate the world.</center></div>
+    
+    </nav>
+</body>
+</html>
