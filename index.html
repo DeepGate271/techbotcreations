@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home TechBot Creations</title>
+    <link rel="stylesheet" href="Css/main.css">
+    <link rel="icon" href="./Images-Video/Logo/slogo.png">
+    <script src="https://kit.fontawesome.com/849bc237cd.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body class="body"> 
+    <nav>
+        <div class="logo"><b>TechBot Creations</b></div>
+        <div class="search-box">
+            <input type="text" id="search-input" class="search-txt" placeholder="Search">
+            <button type="submit"></button>
+            <a href="#" class="search-btn" id="search-btn">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <nav class="sidebar">
+        <div class="sidebar header"></div>
+            
+            <ul>
+                <li><a href="#" class="top-btn"><i class="fas fa-stream"> &nbspTopics</i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="top-show">
+                    <li><a href="Download.html"><i class="fas fa-folder"> &nbspDownload Files</i></a></li>
+                    <li><a href="BB-8.html"><i class="fas fa-robot"> &nbspBB-8</i></a></li>
+                    <li><a href="problemas.html"><i class="fas fa-exclamation-triangle">&nbspDefinição Problemas</i></a></li>
+                    <li><a href="metodologia.html"><i class="far fa-clipboard">&nbspMetodologia</i></a></li>
+                    <li><a href="tecnologias.html"><i class="	fas fa-microchip">&nbspTecnologias Usadas</i></a></li>
+                    <li><a href="casos.html"><i class="	fas fa-project-diagram">&nbspCasos de Uso</i></a></li>
+                </ul>
+                <li><a href="curso.html"><i class="fas fa-graduation-cap">&nbsp Curso</i></a></li>
+                <li><a href="#" class="fct-btn"><i class="fas fa-address-card">&nbsp FCT</i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="fct-show">
+                    <li><a href="ttrw.html"><i class="fas fa-building">&nbsp TTRW</i></a></li>
+                    <li><a href="sourcing.html"><i class="fas fa-building">&nbsp Sourcing Trust</i></a></li>
+                </ul>
+                <li><a href="#" class="soc-btn"><i class="fas fa-at">&nbsp Social Media </i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="soc-show"> 
+                    <li><a href="https://www.instagram.com/techbot._.creations/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/people/TechBot-Creations/61551598060661/"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/techbot-creations-7a787b293/"><i class="fab fa-linkedin"></i></a></li>
+                </ul> 
+                <li><a href="contact.html"><i class="fas fa-envelope">&nbspContact</i></a></li> 
+                <li><a href="about.html"><i class="fas fa-info-circle">&nbsp About Us</i></a></li>
+            </ul>
+        </nav>
+    </nav>
+    <script>
+        $('.top-btn').click(function(){
+            $('nav ul .top-show').toggleClass("show");
+        });
+
+        $('.soc-btn').click(function(){
+            $('nav ul .soc-show').toggleClass("show1");
+        });
+        $('.fct-btn').click(function(){
+            $('nav ul .fct-show').toggleClass("show2");
+        });
+
+        document.getElementById('search-input').addEventListener('keydown', function (e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                realizarPesquisa();
+            }
+        });
+
+        document.getElementById('search-btn').addEventListener('click', function () {
+            realizarPesquisa();
+        });
+
+        function realizarPesquisa() {
+    var searchTerm = document.getElementById('search-input').value;
+    var encodedSearchTerm = encodeURIComponent(searchTerm);
+    var urlMapping = {
+        'Contact' : 'Contact.html',
+        'contact' : 'Contact.html',
+        'about us' : 'about.html',
+        'About Us' : 'about.html',
+        'BB-8' : 'BB-8.html',
+        'bb-8' : 'BB-8.html',
+        'Curso' : 'curso.html',
+        'curso' : 'curso.html',
+        'ttrw' : 'ttrw.html',
+        'TTRW' : 'ttrw.html',
+        'Download' : 'download.html',
+        'Download Files' : 'download.html',
+        'Files' : 'download.html',
+        'files' : 'download.html',
+        'download' : 'download.html',
+        'problemas' : 'problemas.html',
+        'Definição Problemas' : 'problemas.html',
+        'Problemas' :  'problemas.html',
+        'Definição' : 'problemas.html',
+        'definição' : 'problemas.html',
+        'Metodologia' : 'metodologia.html',
+        'metodologia' : 'metodologia.html',
+        'tecnologias usadas' : 'tecnologias.html',
+        'Tecnologias Usadas' : 'tecnologias.html',
+        'tecnologias' : 'tecnologias.html',
+        'Tecnologias' : 'tecnologias.html',
+        'Casos de Uso' : 'casos.html',
+        'casos de uso' : 'casos.html',
+        'Casos' : 'casos.html',
+        'casos' : 'casos.html',
+        'Sourcing Trust' : 'sourcing.html',
+        'sourcing trust' : 'sourcing.html',
+        'Sourcing' : 'sourcing.html',
+        'sourcing' : 'sourcing.html',
+        'Trust' : 'sourcing.html',
+        'trust' : 'sourcing.html',
+
+    };
+
+    if (searchTerm in urlMapping) {
+        var urlDestino = urlMapping[searchTerm];
+        window.location.href = urlDestino + '?pesquisa=' + encodedSearchTerm;
+    } 
+    else {
+        window.location.href = '404.html?pesquisa=' + encodedSearchTerm;
+    }
+}
+    </script>
+    <br>
+    <center><img src="./Images-Video/Logo/logo.png" width="990" height="1010" controls alt="Logo da empresa"></center>
+    <nav>
+
+        <marquee><div class="end"><center>TechBot Creations in the path to innovate the world.</center></div></marquee>
+    
+    </nav>
+</body>
+</html>

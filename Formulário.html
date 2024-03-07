@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" href="./Images-Video/Logo/slogo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        .two-inputs {
+            display: flex;
+            gap: 16px;
+        }
+
+        .two-inputs input {
+            flex: 1;
+        }
+
+        button {
+            background-color: #3EE8BE;
+            color: #fff;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block; 
+            margin: 0 auto;
+            
+        }
+
+        button:hover {
+            background-color: #44FFD1;
+            color: #6153CC;
+        }
+
+        btn-back{
+
+            align-items: center;
+
+        }
+    </style>
+    <title>Formulário</title>
+</head>
+<body>
+
+    <form action="https://formspree.io/f/mleqjrka" method="POST">
+        <div class="two-inputs">
+            <div>
+                <label for="primeiroNome">Primeiro Nome:</label>
+                <input type="text" id="Primeiro Nome" name="Primeiro Nome" required>
+            </div>
+
+            <div>
+                <label for="ultimoNome">Último Nome:</label>
+                <input type="text" id="Ultimo Nome" name="Ultimo Nome" required>
+            </div>
+        </div>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="E-mail" name="E-mail" required>
+
+        <label for="telemovel">Telemóvel:</label>
+        <input type="tel" id="Telemovel" name="Telemóvel" required>
+
+        <label for="curriculo">Currículo (PDF):</label>
+        <input type="file" id="Curriculo" name="Curriculo" accept=".pdf" required>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="Mensagem" name="Mensagem" rows="4"></textarea>
+
+        <button type="submit">Enviar</button> <div class="btn btn-link"></div>
+    
+    </form>
+    <!--<center><a href="javascript:history.back()"><button class="btn">Go Back</button></a></center>-->
+
+</body>
+</html>
