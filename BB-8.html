@@ -1,0 +1,304 @@
+<!Doctype html>
+    <head>
+        <title>BB-8 TechBot Creations</title>
+        <link rel="stylesheet" href="Css/main.css">
+        <link rel="icon" href="./Images-Video/Logo/slogo.png">
+        <script src="https://kit.fontawesome.com/849bc237cd.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    </head>
+    <body class="body"> 
+        
+        <nav>
+            <div class="logo"><b>TechBot Creations</b></div>
+        <div class="search-box">
+            <input type="text" id="search-input" class="search-txt" placeholder="Search">
+            <button type="submit"></button>
+            <a href="#" class="search-btn" id="search-btn">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <nav class="sidebar">
+        <div class = "sidebar header"></div>
+            
+            <ul>
+                
+                <li><a href="index.html"><i class="fas fa-home">&nbsp Home</i></a></li>
+                <li><a href="#" class="top-btn"><i class="fas fa-stream"> &nbspTopics</i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="top-show">
+                    <li><a href="Download.html"><i class="fas fa-folder"> &nbspDownload Files</i></a></li>
+                    <li><a href="problemas.html"><i class="fas fa-exclamation-triangle">&nbspDefinição Problemas</i></a></li>
+                    <li><a href="metodologia.html"><i class="far fa-clipboard">&nbspMetodologia</i></a></li>
+                    <li><a href="tecnologias.html"><i class="	fas fa-microchip">&nbspTecnologias Usadas</i></a></li>
+                    <li><a href="casos.html"><i class="	fas fa-project-diagram">&nbspCasos de Uso</i></a></li>
+                </ul>
+                <li><a href="curso.html"><i class="fas fa-graduation-cap">&nbsp Curso</i></a></li>
+                <li><a href="#" class="fct-btn"><i class="fas fa-address-card">&nbsp FCT</i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="fct-show">
+                    <li><a href="ttrw.html"><i class="fas fa-building">&nbsp TTRW</i></a></li>
+                    <li><a href="sourcing.html"><i class="fas fa-building">&nbsp Sourcing Trust</i></a></li>
+                </ul>
+                <li><a href="#" class="soc-btn"><i class="fas fa-at">&nbsp Social Media </i><span class="fas fa-caret-right"></span></a></li>
+                <ul class="soc-show"> 
+                    <li><a href="https://www.instagram.com/techbot._.creations/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/people/TechBot-Creations/61551598060661/"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/techbot-creations-7a787b293/"><i class="fab fa-linkedin"></i></a></li>
+                </ul> 
+                <li><a href="contact.html"><i class="fas fa-envelope">&nbspContact</i></a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle">&nbsp About Us</i></a></li>
+            </ul>
+        </nav>
+
+        </nav>
+        
+        <script>
+            $('.top-btn').click(function(){
+                $('nav ul .top-show').toggleClass("show");
+            });
+    
+            $('.soc-btn').click(function(){
+                $('nav ul .soc-show').toggleClass("show1");
+            });
+            $('.fct-btn').click(function(){
+                $('nav ul.fct-show').toggleClass("show2");
+            });
+
+    
+            document.getElementById('search-input').addEventListener('keydown', function (e) {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    realizarPesquisa();
+                }
+            });
+    
+            document.getElementById('search-btn').addEventListener('click', function () {
+                realizarPesquisa();
+            });
+    
+            function realizarPesquisa() {
+                var searchTerm = document.getElementById('search-input').value;
+                var encodedSearchTerm = encodeURIComponent(searchTerm);
+                var urlMapping = {
+                    'Contact' : 'Contact.html',
+                    'contact' : 'Contact.html',
+                    'Home' : 'index.html',
+                    'home' : 'index.html',
+                    'About US' : 'about.html',
+                    'about us' : 'about.html',
+                    'Curso' : 'curso.html',
+                    'curso' : 'curso.html',
+                    'ttrw' : 'ttrw.html',
+                    'TTRW' : 'ttrw.html', 
+                    'Download' : 'download.html',
+                    'Download Files' : 'download.html',
+                    'Files' : 'download.html',
+                    'files' : 'download.html',
+                    'download' : 'download.html', 
+                    'problemas' : 'problemas.html',
+                    'Definição Problemas' : 'problemas.html',
+                    'Problemas' :  'problemas.html',
+                    'Definição' : 'problemas.html',
+                    'definição' : 'problemas.html',
+                    'Metodologia' : 'metodologia.html',
+                'metodologia' : 'metodologia.html',
+                'tecnologias usadas' : 'tecnologias.html',
+        'Tecnologias Usadas' : 'tecnologias.html',
+        'tecnologias' : 'tecnologias.html',
+        'Tecnologias' : 'tecnologias.html', 
+        'Casos de Uso' : 'casos.html',
+        'casos de uso' : 'casos.html',
+        'Casos' : 'casos.html',
+        'casos' : 'casos.html',
+        'Sourcing Trust' : 'sourcing.html',
+        'sourcing trust' : 'sourcing.html',
+        'Sourcing' : 'sourcing.html',
+        'sourcing' : 'sourcing.html',
+        'Trust' : 'sourcing.html',
+        'trust' : 'sourcing.html',
+                };
+    
+                if (searchTerm in urlMapping) {
+                    var urlDestino = urlMapping[searchTerm];
+                    window.location.href = urlDestino + '?pesquisa=' + encodedSearchTerm;
+                } 
+                else {
+        window.location.href = '404.html?pesquisa=' + encodedSearchTerm;
+    }
+            }
+        </script>
+         <div class="section">
+         <br> <center><div class="section-title"><b>Project BB-8</b></div><hr width="85%" color = black size = 3 align="center"></center>
+         <br><div class="section-txt">Aposto que todos nós gostamos daquele robô da saga de filmes da Star Wars. Bem a TechBot Creations decidiu recriá-lo na vida real. <br> Nesta página poderão aprender como recriá-lo seguindo os passos a baixo. <br> Após seguir todos os passos, o projeto estará completo e poderão divertir-se ao máximo com ele tornando-se um novo amigo "espacial". Vamos começar!</div>
+         <br><div class="section-txt">Para fazer o BB-8 vamos precisar de alguns materiais, sendo eles:</div>
+            <br>
+            <ul class="section-list">
+
+                <li>- Arduino (1x);</li>
+                <li>- Motor Shield (1x);</li>
+                <li>- Motores DC (2x);</li>
+                <li>- Rodas (2x);</li>
+                <li>- Módulo Bluetooth HC-06 (1x);</li>
+                <li>- Cabos Male to female (4x);</li>
+                <li>- Cabos Male to male (2x);</li>
+                <li>- Pilhas AA (4x);</li>
+                <li>- Suporte para 4 pilhas (1x);</li>
+                <li>- Ímans Neodymium (3x);</li>
+                <li>- Parafusos Pequenos (2x);</li>
+                <li>- Braçadeiras (2x);</li>
+                <li>- Fita cola</li>
+
+            </ul>
+            <div class="section-txt">
+            <br>Para fazer download dos arquivos de impressão 3D clique aqui. <a href="Download.html">Download Files</a>
+            <br>Saiba também quais os possíveis problemas que podem aparecer. <a href="problemas.html">Definição Problemas</a>
+            <br>Antes de começarmos a fazer o BB-8, em alguns casos as pilhas AA podem não ter voltagem suficiente para alimentar o circuito todo. Caso isso aconteça é aconselhável trocar para pilhas com uma voltagem maior, como por exemplo 2 pilhas de 9V. </div>
+
+            <br>
+            </div>
+            <br><div class="section">
+                <div class="section-title"><center>Montagem do Hardware do robô<hr width="85%" color = black size = 3 align="center"></center></div>
+                <br><center><img class="img" src="./Images-Video/BB-8/motor-shield.jpg" alt="Conexão dos cabos ao Motor-Shield">
+                <br>
+                <div class="section-txt">
+                <br>O primeiro passo será soldar 4 cabos male to female no motor-shield. 
+                    A soldegem deve ser feita por alguém com experiência nesta área, 
+                    caso não tenha conhecimento ou experiência alguma, 
+                    aconselhamos a procrurar equipamento já soldado ou alguém com conhecimentos em soldegem. 
+                    Os cabos serão soldados nas portas: 5V; GNG; 0; 1. 
+                </div></center>
+            </div>
+            <br>
+            <div class="section">
+                <br><center><img class="img" src="./Images-Video/BB-8/motores-dc.jpg" alt="">
+                <div class="section-txt">
+                <br>O segundo passo será soldar 2x cabos em cada motor. 
+                    Voltamos a aconselhar a ser feito por alguém com conhecimentos e habilidades em soldagem. 
+                    Para a vossa própria segurança.  
+                </div></center>
+            </div>
+            <br>
+            <div class="section">
+            <br><center><img src="./Images-Video/BB-8/hc-06-conection.jpg" alt="Conexão dos cabos ao HC-06" class="img">
+            <div class="section-txt">
+            <br>
+                O terceiro passo é ligar o cabo que está soldado no pino 0 do Motor-Shield ao pino que corresponde ao TX do Módulo Bluetooth HC-06.
+                Seguindo com a ligação do cabo soldado no pino 1 ao pino correspondente ao RX do Módulo Bluetooth HC-06.
+                De seguida vamos ligar os cabos que estão soldados nos pinos 5V e GNG aos pinos correspondentes do 5V e GNG do Módulo Bluetooth HC-06. 
+            </div></center>
+            </div>
+            <br>
+            <div class="section">
+                <br><center><img src="./Images-Video/BB-8/arduino-screw.jpg" alt="Posição do Arduino no chassi" class="img">
+                <div class="section-txt">
+                    <br>
+                    O quarto passo, vai ser pegar em 2 parafusos 3mmx12mm para prender o Arduino no chassi. 
+                    Chegando um passo mais perto de ter um BB-8 a andar pela casa.
+                </div></center>
+            </div>
+            <br>
+            <div class="section">
+                <br><center><img src="./Images-Video/BB-8/motor-dc-place.jpg" alt="Posicionamento dos motores." class="img">
+                <div class="section-txt">
+                    <br>
+                    Para o quinto passo, vamos pegar nos motore e nas braçadeiras e colocar da mesma forma que observamos na imagem. 
+                    As braçadeiras devem se apertar bem para os motores não se soltarem enquanto o robô está a andar.
+                </div></center>
+            </div>
+            <br>
+            <div class="section">
+                <br><center><img src="./Images-Video/BB-8/motor-shield-arduino.jpg" alt="Conexão do Motor-Shield com o Arduino" class="img">
+                <div class="section-txt">
+                    <br>
+                    Para o sexto passo, vamos pegar no Motor-Shield e vamos conectar ao Arduino.
+                    Com isto vamos poder controlar os motores em nenhum problema.
+                </div></center>
+            </div>
+            <br>
+            <div class="section">
+                <br><center><img src="./Images-Video/BB-8/hc-06-position.jpg" alt="Posição no HC-06 no chassi" class="img">
+                <div class="section-txt">
+                    <br>
+                    Para o sétimo passo vamos colocar o Módulo Bluetooth HC-06 na posição indicada na imagem anterior. 
+                    Tendo assim um sítio seguro para o nosso Módulo Bluetooth
+                </div></center>
+            </div>
+            <br>
+            <div class="section">
+                <br><center><img src="./Images-Video/BB-8/motor-dc-conection.jpg" alt="Conexão dos motores com o Motor-Shield" class="img">
+                <div class="section-txt">
+                    <br>
+                    Para o oitavo passo vamos conectar os motores-dc ao Motor-Shield. 
+                    Permitindo o controlo dos motores sem nenhuma falha. 
+                </div></center>
+            </div>
+            <br>
+            <div class="section">
+                <br><center><img src="./Images-Video/BB-8/batery-conection.jpg" alt="Conexão do suporte de pilhas ao Motor-Shield" class="img">
+                <div class="section-txt">
+                    <br>
+                    Para o nono e último passo vamos conectar o suporte de pilhas ao Motor-Shield, 
+                    dando então energia aos Motores-DC, Motor-Shield, Módulo Bluetooth HC-06 e Arduino.
+                    Finalizando assim a montagem do Hardware do robô.
+                </div></center>
+            </div>
+            <br>
+            <div class="section">
+                <br><div class="section-title"><center>Programação do Código<hr width="85%" color = black size = 3 align="center"></center></div>
+                <br><center><img src="./Images-Video/BB-8/Code/code-1.png" alt="Primeiras linhas do código" class="img"></center>
+                <br><div class="section-txt">
+                    Nesta parte nós vamos adicionar as 2 bibliotecas necessárias para controlar tanto os motores, como o Motor-Shield.
+                    De seguida vamos definir as portas TX e RX do Módulo Bluetooth HC-06. 
+                    Vamos também definir quais as portas associadas aos motores e vamos nomear de motor1 e motor2.
+                    De seguida vamos criar uma variável char chamada command, e uma variável int chamada ledPin associada ao pin 13, para fazer testes ao bluetooth.
+                    Dentro do void setup vamos definir que o ledPin é output e que é low.
+                    Por último vamos dar ínicio ao serial e ao bluetooth.
+                </div>
+
+            </div>
+            <br>
+            <div class="section">
+                <br><img src="./Images-Video/BB-8/Code/code-2.png" alt="Parte 2 do código" class="img">
+                <br><div class="section-txt">
+                    Agora no void loop vamos meter um while(enquanto), para enquanto o bluetooth tiver disponível vai definir que command é igual a bluetooth.read. 
+                    De seguida se command for igual a f vai defenir uma velocidade e direção para andar para a frente.
+                    Senão se command for igual a b vai definir outra velocidade e outra direçãopara andar para trás.
+                </div>
+            </div>
+            <br>
+            <div class="section">
+                <img src="./Images-Video/BB-8/Code/code-3.png" alt="Terceira parte do código" class="img">
+                <br><div class="section-txt">
+                    Senão se o command for igual a l vai definir uma velocidade para um motor e outra velocidade para outro motor.
+                    Senão se o command for igual a r vai definir uma velocidade para um motor e outra para o outro motor.
+                    Vamos também dizer que se command for igual a 1 vai ligar o led de teste e mandar uma mensagem no terminal.
+                </div>
+            </div>
+            <br>
+            <div class="section">
+                <img src="./Images-Video/BB-8/Code/code-4.png" alt="Quarta parte do código" class="img">
+                <br>
+                <div class="section-txt">
+                    Se command for igual a 0 vai desligar o ledPin.
+                    Senão se command for igual a s vai chamar a função Stop.
+                </div>
+            </div>
+            <br>
+            <div class="section">
+                <br><img src="./Images-Video/BB-8/Code/code-5.png" alt="Quinta parte do código" class="img">
+                <br>
+                <div class="section-txt">
+                    Na função Stop vai definir a velocidade do motor como 0 e vai desligar os motores.
+                </div>
+            </div>
+            <nav>
+
+                <div class="end"><center>TechBot Creations in the path to innovate the world.</center></div>
+            
+            </nav>
+
+    </body>
+</html>
