@@ -68,6 +68,7 @@ animation: degrade-animado 4s infinite alternate;
     font-size: 28px;
     font-family: 'Inter', sans-serif;
     display:block;
+    bottom: 20px;
     padding: 36px 38px;
     
 
